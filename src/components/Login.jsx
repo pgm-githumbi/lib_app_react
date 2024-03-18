@@ -13,22 +13,31 @@ import { forEach } from "lodash";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { register, formState, handleSubmit } = useForm({
+  const { register, reset, formState, handleSubmit, setError } = useForm({
     defaultValues: { email: "", password: "" },
   });
-  const { errors, dirtyFields } = formState;
+  const { errors, dirtyFields, isSubmitted } = formState;
+  const errorsPresent = errors && Object.keys(errors).length;
+  const serverErrorsPresent = errors && errors.root;
   const [submitDisabled, setSubmitDisabled] = useState(
-    (Object.keys(errors).length && "disabled") || ""
+    (errorsPresent && "disabled") || ""
   );
   const [seePassword, setSeePassword] = useState(false);
 
   const onSubmit = async ({ email, password }) => {
     setSubmitDisabled("disabled");
     const { success, message, code } = await logIn({ email, password });
-    if (success) return navigate("/", { replace: true });
+    if (success) {
+      reset();
+      return navigate("/", { replace: true });
+    }
 
     setSubmitDisabled("");
-    forEach(message, (msg) => msg && toast(`Error ${msg}`));
+
+    forEach(message, (msg) => {
+      setError("root", { type: code, message });
+      msg && toast(`Error ${msg}`);
+    });
   };
   return (
     <>
@@ -63,6 +72,18 @@ const Login = () => {
                 ...maxLength(100),
               }}
             />
+            <p>
+              {serverErrorsPresent
+                ? errors.root.message.map((message) => (
+                    <div
+                      key={Math.random().toString(36)}
+                      className="form-text form-text-warning alert alert-danger"
+                    >
+                      {message}
+                    </div>
+                  ))
+                : ""}
+            </p>
             <p>
               <Link to="/signup">Create account</Link>
             </p>
