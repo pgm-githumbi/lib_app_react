@@ -36,19 +36,19 @@ export const TablePagesContext = createContext({
 });
 const PaginationContext = ({ children }) => {
   const [pageIndex, setPageIndex] = useState(0);
-  const [pageSize, setPageSize] = useState(8);
+  const [pageSize, setPageSize] = useState(20);
   const [sorting, setSorting] = useState([]);
 
   const [allBooksPageIndex, allBooksSetPageIndex] = useState(0);
-  const [allBooksPageSize, allBooksSetPageSize] = useState(8);
+  const [allBooksPageSize, allBooksSetPageSize] = useState(20);
   const [allBooksSorting, allBooksSetSorting] = useState([]);
 
   const [returnedBooksPageIndex, returnedBooksSetPageIndex] = useState(0);
-  const [returnedBooksPageSize, returnedBooksSetPageSize] = useState(8);
+  const [returnedBooksPageSize, returnedBooksSetPageSize] = useState(20);
   const [returnedBooksSorting, returnedBooksSetSorting] = useState([]);
 
   const [approvalTablePageIndex, approvalTableSetPageIndex] = useState(0);
-  const [approvalTablePageSize, approvalTableSetPageSize] = useState(8);
+  const [approvalTablePageSize, approvalTableSetPageSize] = useState(20);
   const [approvalTableSorting, approvalTableSetSorting] = useState([]);
 
   return (
