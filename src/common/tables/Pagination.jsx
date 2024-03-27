@@ -8,6 +8,11 @@ const Pagination = ({ table, onPageChange, onPageSizeChange }) => {
     console.log("Going to pageNo: ", pageNo);
     onPageChange(pageNo);
   };
+  const generateNumberArray = (x, y, delta) =>
+    Array.from(
+      { length: Math.floor((y - x) / delta) + 1 },
+      (_, i) => x + i * delta
+    );
 
   return (
     <div className="container-fluid">
@@ -39,7 +44,7 @@ const Pagination = ({ table, onPageChange, onPageSizeChange }) => {
               onPageSizeChange(Number(e.target.value));
             }}
           >
-            {[2, 4, 6, 8].map((pageSize) => (
+            {generateNumberArray(5, 60, 5).map((pageSize) => (
               <option key={pageSize} value={pageSize}>
                 {pageSize}
               </option>
