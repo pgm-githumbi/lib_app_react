@@ -1,23 +1,40 @@
-const ApproveBorrowButton = ({ approveMutation, borrow, book, user }) => {
-  const { isLoading, isError, isSuccess, error, mutate } = approveMutation;
-  const loadingRender = <span>Loading...</span>;
-  const successRender = <span>Approved!</span>;
-  const errorRender = <span>Failed to approve. {error.message}</span>;
-  const normalRender = <span>approve</span>;
+import useApproveBorrowMutation from "../hooks/useApproveBorrowMutation";
 
-  const btnClass = (isLoading && "info") || (isError && "danger") || "success";
-  return (
+const ApproveBorrowButton = ({ borrow, bookQuery, userQuery }) => {
+  const approveMutation = useApproveBorrowMutation();
+  const anyLoading =
+    approveMutation.isLoading || bookQuery.isLoading || userQuery.isLoading;
+  const anyError =
+    approveMutation.isError || bookQuery.isError || userQuery.isError;
+
+  const loadingRender = <span className="text-info">Loading...</span>;
+  const approveSuccessRender = <span className="text-success">Approved!</span>;
+  const approveErrorRender = (
+    <span className="text-danger">
+      Failed to approve. ${approveMutation.error?.message};
+    </span>
+  );
+
+  const normalRender = (
     <button
-      className={`"btn btn-${btnClass}`}
-      disabled={isLoading || isSuccess}
-      onClick={() => mutate(borrow)}
+      className={`btn btn-sm btn-success`}
+      disabled={anyLoading || anyError}
+      onClick={() => approveMutation.mutate(borrow)}
     >
       <i className="fa-solid fa-check px-1"></i>
-      {isLoading && loadingRender}
-      {isSuccess && successRender}
-      {isError && errorRender}
-      {!isError && !isLoading && !isSuccess && normalRender}
+      approve
     </button>
+  );
+  return (
+    <>
+      {!approveMutation.isError &&
+        !approveMutation.isLoading &&
+        !approveMutation.isSuccess &&
+        normalRender}
+      {approveMutation.isError && approveErrorRender}
+      {approveMutation.isSuccess && approveSuccessRender}
+      {approveMutation.isLoading && loadingRender}
+    </>
   );
 };
 

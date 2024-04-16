@@ -51,6 +51,10 @@ export const apiLoans = (apiLoansResponse) => {
   return apiLoansResponse.data.data;
 };
 
+export const apiPostLoan = (apiPostLoanResponse) => {
+  return apiPostLoanResponse.data.data;
+};
+
 export const apiCategory = (apiCategoryResponse) => {
   return apiCategoryResponse.data.data;
 };
