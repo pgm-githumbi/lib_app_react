@@ -18,7 +18,9 @@ const BooksTable = ({
   const { data, ...allBooksQuery } = useQuery({
     queryKey: allBooksQueryKey,
     queryFn: getAllBooks,
-    staleTime: 600000,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    cacheTime: Infinity,
   });
 
   if (allBooksQuery.isLoading) {
@@ -38,7 +40,7 @@ const BooksTable = ({
   if (allBooksQuery.isSuccess) {
     return (
       <>
-        <div className="col col-2 py m-2">
+        <div className="col-12 col-sm-12 py m-2">
           <div className="row"></div>
         </div>
         <div className="row">

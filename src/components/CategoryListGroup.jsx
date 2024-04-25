@@ -29,6 +29,9 @@ const CategoryListGroup = () => {
   } = useQuery({
     queryKey: ["categories with most books"],
     queryFn: getCategoriesWithMostBooks,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    cacheTime: Infinity,
   });
 
   if (isLoading) {

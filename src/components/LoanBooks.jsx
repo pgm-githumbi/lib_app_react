@@ -51,6 +51,8 @@ const LoanBooks = () => {
     queryKey: ["get-loaned-books"],
     queryFn: getLoanedBooks,
     cacheTime: Infinity,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
   });
 
   const {
