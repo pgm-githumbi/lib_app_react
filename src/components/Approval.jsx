@@ -16,6 +16,8 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import ApproveBorrowButton from "./ApproveBorrowButton";
 import RejectBorrowButton from "./RejectBorrowButton";
+import { STAFF, useCurrUserIs, useCurrUserRoles } from "../hooks/user";
+import { array } from "prop-types";
 
 const currentLocation = "/home/staff";
 const columnHelper = createColumnHelper();
@@ -95,6 +97,7 @@ const Approval = () => {
     },
   } = useContext(TablePagesContext);
 
+  const { isSuccess: gotRole, data: isStaff } = useCurrUserIs(STAFF);
   const borrowQuery = useQuery({
     queryKey: ["staff all book borrow", pageIndex, pageSize],
     queryFn: () => getBorrows({ page: pageIndex, pageSize }),
@@ -191,6 +194,25 @@ const Approval = () => {
     </>
   );
 
+  const notStaffMember = (
+    <div className="card">
+      <div
+        className="display-5 alert alert-danger alert-dismissible text-info"
+        role="alert"
+      >
+        <div className="card-body">
+          You're not a staff member.
+          <p>
+            <small>
+              Hint: login as MainStaffExample@example.com with password:
+              password
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+
   const successRenderNoData = (
     <div className="card">
       <div
@@ -220,6 +242,7 @@ const Approval = () => {
     <div className="container container-fluid">
       <div className="row">
         <div className="col-12 py-2 mx-auto-2">
+          {gotRole && !isStaff && notStaffMember}
           {borrowQuery.isLoading && loadingRender}
           {borrowQuery.isError && errorRender}
           {borrowQuery.isSuccess && !querySuccessButNoData && successRender}
