@@ -29,11 +29,14 @@ const OneBook = () => {
               <i className="fa-solid fa-book-open-reader px-2"></i>
               <div className="display-4">{name}</div>
             </div>
-            <img
-              className="img-responsive py-3 mb-3"
-              src={image}
-              alt="coverpage"
-            />
+            <div className="d-flex flex-grow-1 justify-content-center align-items-center">
+              <img
+                className="img-responsive py-3 mb-3"
+                style={{}}
+                src={image}
+                alt="coverpage"
+              />
+            </div>
             <p>
               <i className="fa-solid fa-comment px-2"></i>
               Description: {description}
