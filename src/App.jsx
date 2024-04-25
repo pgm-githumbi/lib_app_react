@@ -30,6 +30,8 @@ function App() {
             <div className="col-12 mx-auto px-auto">
               <Routes>
                 <Route path="/*">
+                  <Route path="books/one_book/*" element={<OneBook />} />
+                  <Route path="books/:id/one_book/*" element={<OneBook />} />
                   <Route path="books/*" element={<Books />} />
                   <Route path="borrowed_books/*" element={<MyBooks />} />
                   <Route path="staff/" element={<Approval />} />
