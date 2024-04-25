@@ -27,8 +27,8 @@ const MyBooks = () => {
   return (
     <div className="container-sm text-center">
       <div className="row py-3">
-        <div className="col col-sm-auto jumbotron py-2">
-          <h1 className="display-4">Hello, {username}!</h1>
+        <div className="col-12 col-sm-12 col-md-8 jumbotron py-2">
+          <h1 className="display-4">Hello👋, {username}!</h1>
           <p className="lead">
             This is a list of books you're currently reading.
           </p>
