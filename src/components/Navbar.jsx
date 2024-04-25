@@ -22,58 +22,60 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className="navbar navbar-expand-lg bg-body-tertiary navbar-light bg-light border-bottom"
-      ref={navbarRef}
-    >
-      <div className="container-fluid">
-        <ul className="nav nav-underline d-flex">
-          <li className="nav-item">
-            <i className="fa-solid fa-globe px-2"></i>
-            <span className="navbar-brand mb-0 h2 navbar-text">Library</span>
-          </li>
+    <div className="col-12 col-sm-12">
+      <nav
+        className="navbar navbar-expand-lg bg-body-tertiary navbar-light bg-light border-bottom"
+        ref={navbarRef}
+      >
+        <div className="container-fluid">
+          <ul className="nav nav-underline d-flex">
+            <li className="nav-item">
+              <i className="fa-solid fa-globe px-2"></i>
+              <span className="navbar-brand mb-0 h2 navbar-text">Library</span>
+            </li>
 
-          <SmartLink
-            linkName="Books"
-            iconClass="fa-solid fa-book"
-            href="/home/books"
-          />
-          <SmartLink
-            linkName="My Books"
-            iconClass="fa-solid fa-book-open"
-            href="/home/borrowed_books"
-          />
+            <SmartLink
+              linkName="Books"
+              iconClass="fa-solid fa-book"
+              href="/home/books"
+            />
+            <SmartLink
+              linkName="My Books"
+              iconClass="fa-solid fa-book-open"
+              href="/home/borrowed_books"
+            />
 
-          {/* <div className=" d-flex justify-content-start"> */}
-          <li className="nav-item">
-            <button
-              className="navbar-toggler btn btn-sm ms-auto"
-              type="button"
-              onClick={() => setCollapsed(!collapsed)}
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-              {/* <i class="fa-solid fa-bars"></i> */}
-            </button>
-          </li>
-          {/* </div> */}
-          <div className={`collapse navbar-collapse ${collapseClass}`}>
-            <ul className="navbar-nav nav-underline  ">
-              <SmartLink
-                linkName="Staff Panel"
-                iconClass={`fa-solid fa-user-tie`}
-                href="/home/staff"
-              />
-              <SmartLink
-                linkName="Logout"
-                iconClass={`fa-solid fa-arrow-right-from-bracket`}
-                href="/logout"
-              />
-            </ul>
-          </div>
-        </ul>
-      </div>
-    </nav>
+            {/* <div className=" d-flex justify-content-start"> */}
+            <li className="nav-item">
+              <button
+                className="navbar-toggler btn btn-sm ms-auto"
+                type="button"
+                onClick={() => setCollapsed(!collapsed)}
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon"></span>
+                {/* <i class="fa-solid fa-bars"></i> */}
+              </button>
+            </li>
+            {/* </div> */}
+            <div className={`collapse navbar-collapse ${collapseClass}`}>
+              <ul className="navbar-nav nav-underline  ">
+                <SmartLink
+                  linkName="Staff Panel"
+                  iconClass={`fa-solid fa-user-tie`}
+                  href="/home/staff"
+                />
+                <SmartLink
+                  linkName="Logout"
+                  iconClass={`fa-solid fa-arrow-right-from-bracket`}
+                  href="/logout"
+                />
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
   );
 };
 
