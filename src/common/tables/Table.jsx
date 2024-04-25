@@ -49,7 +49,7 @@ const Table = ({
 
   return (
     <React.Fragment>
-      <table className="table table-striped">
+      <table className="table table-striped table-bordered table-hover">
         <Thead table={table} />
         <Tbody table={table} />
       </table>
