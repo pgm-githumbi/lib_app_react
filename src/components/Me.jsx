@@ -21,7 +21,7 @@ function Me() {
           title: "Education",
           content: `I have a computer science degree from Multimedia University of Kenya.
           Graduated with second class upper division`,
-          icon: "usertie",
+          icon: "graduation",
         },
         {
           type: "projects-list",

@@ -66,6 +66,11 @@ const Navbar = () => {
                   href="/home/staff"
                 />
                 <SmartLink
+                  linkName="Site Creator"
+                  iconClass={`fa-solid fa-laptop-code`}
+                  href="/home/me"
+                />
+                <SmartLink
                   linkName="Logout"
                   iconClass={`fa-solid fa-arrow-right-from-bracket`}
                   href="/logout"
