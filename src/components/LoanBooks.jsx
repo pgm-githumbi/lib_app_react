@@ -1,25 +1,12 @@
-import React, { Component, useContext, useEffect, useState } from "react";
 import {
   // Table,
   createColumnHelper,
-  useReactTable,
-  getCoreRowModel,
-  getSortedRowModel,
-  getPaginationRowModel,
 } from "@tanstack/react-table";
-import books from "../fake_data/BooksData";
-import Thead from "../common/tables/Thead";
-import Tbody from "../common/tables/Tbody";
-import Pagination from "../common/tables/Pagination";
-import CustomTable from "../common/tables/Table";
-import { TablePagesContext } from "../PaginationContext";
-import axios from "axios";
-import { forEach } from "lodash";
-import { getLoanedBooks, loanedBooks } from "../data/BooksData";
-import { LoanBooksContext } from "../contexts/LoanBooksCtx";
-import { Link } from "react-router-dom";
-import { loadingContext } from "../contexts/LoadingContext";
+import React, { useContext } from "react";
 import { useQuery } from "react-query";
+import { TablePagesContext } from "../PaginationContext";
+import CustomTable from "../common/tables/Table";
+import { getLoanedBooks } from "../data/BooksData";
 
 const columnHelper = createColumnHelper();
 const columns = [

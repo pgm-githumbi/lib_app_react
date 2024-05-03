@@ -1,8 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import CommonListGroup from "../common/CommonListGroup";
 import { getCategoriesWithMostBooks } from "../data/CategoryData";
-import { ListGroupContexts } from "../contexts/ListGroupContexts";
-import { useQuery } from "react-query";
 const defaultSidebarLinks = [
   {
     visibleName: "All",

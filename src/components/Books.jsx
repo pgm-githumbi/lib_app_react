@@ -1,33 +1,15 @@
-import React, { Component, useContext, useEffect, useState } from "react";
-import Table from "../common/tables/Table";
-import CommonListGroup from "../common/CommonListGroup";
 import { createColumnHelper } from "@tanstack/react-table";
-import books from "../fake_data/BooksData";
-import {
-  allBooks,
-  bookAlreadyBorrowed,
-  borrowBook,
-  cancelBorrow,
-  getAllBooks,
-  getBorrow,
-} from "../data/BooksData";
+import React, { useContext, useEffect } from "react";
+import { Link, Route, Routes } from "react-router-dom";
 import { TablePagesContext } from "../PaginationContext";
-import { AllBooksContext } from "../contexts/AllBooksContext";
-import CategoryListGroup from "./CategoryListGroup";
-import BooksTable from "./BooksTable";
-import {
-  Link,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
 import ErrorPage from "../common/ErrorPage";
-import { getUsername } from "../data/Auth";
+import { AllBooksContext } from "../contexts/AllBooksContext";
 import { loadingContext } from "../contexts/LoadingContext";
-import { useMutation, useQuery, useQueryClient } from "react-query";
-import { set } from "lodash";
+import { getUsername } from "../data/Auth";
+import { allBooks } from "../data/BooksData";
+import BooksTable from "./BooksTable";
 import BorrowBook from "./BorrowBook";
+import CategoryListGroup from "./CategoryListGroup";
 
 const currentLocation = "home/books";
 const columnHelper = createColumnHelper();

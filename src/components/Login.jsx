@@ -1,15 +1,14 @@
+import { forEach } from "lodash";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import FormInput from "../common/forms/FormInput";
 import {
   maxLength,
-  minLength,
   requiredField,
 } from "../common/forms/utils/ValidationUtils";
-import { Link, useNavigate } from "react-router-dom";
 import { logIn } from "../data/Auth";
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import { forEach } from "lodash";
 
 const Login = () => {
   const navigate = useNavigate();

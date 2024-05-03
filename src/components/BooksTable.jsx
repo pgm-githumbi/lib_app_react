@@ -1,6 +1,6 @@
-import { useLocation, useParams } from "react-router-dom";
-import Table from "../common/tables/Table";
 import { useQuery, useQueryClient } from "react-query";
+import { useParams } from "react-router-dom";
+import Table from "../common/tables/Table";
 import { getAllBooks } from "../data/BooksData";
 
 const BooksTable = ({

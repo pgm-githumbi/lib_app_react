@@ -1,23 +1,13 @@
 import { createColumnHelper } from "@tanstack/react-table";
+import { useContext } from "react";
+import { useQueries, useQuery } from "react-query";
+import { Link } from "react-router-dom";
+import { TablePagesContext } from "../PaginationContext";
 import Table from "../common/tables/Table";
-import PaginationContext, { TablePagesContext } from "../PaginationContext";
-import { useContext, useMemo } from "react";
-import { useMutation, useQueries, useQuery, useQueryClient } from "react-query";
-import _ from "lodash";
-import {
-  approveBorrow,
-  getABook,
-  getAUser,
-  getBook,
-  getBorrow,
-  getBorrows,
-  getBorrowsAsStaff,
-} from "../data/BooksData";
-import { Link, useLocation } from "react-router-dom";
+import { getABook, getAUser, getBorrows } from "../data/BooksData";
+import { STAFF, useCurrUserIs } from "../hooks/user";
 import ApproveBorrowButton from "./ApproveBorrowButton";
 import RejectBorrowButton from "./RejectBorrowButton";
-import { STAFF, useCurrUserIs, useCurrUserRoles } from "../hooks/user";
-import { array } from "prop-types";
 
 const currentLocation = "/home/staff";
 const columnHelper = createColumnHelper();
