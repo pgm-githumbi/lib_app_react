@@ -13,6 +13,7 @@ import TopLevelContext from "./contexts/TopLevelContext";
 import "react-toastify/dist/ReactToastify.css";
 import Approval from "./components/Approval";
 import OneBook from "./components/OneBook";
+import Me from "./components/Me";
 
 function App() {
   const navig = useNavigate();
@@ -30,6 +31,7 @@ function App() {
             <div className="col-12 mx-auto px-auto">
               <Routes>
                 <Route path="/*">
+                  <Route path="me/*" element={<Me />} />
                   <Route path="books/one_book/*" element={<OneBook />} />
                   <Route path="books/:id/one_book/*" element={<OneBook />} />
                   <Route path="books/*" element={<Books />} />
