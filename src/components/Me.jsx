@@ -72,34 +72,29 @@ function Me() {
               items: [{ title: "Solidity" }],
             },
           ],
-          //   content: `I made this website using the following
-
-          //   Frontend:-
-          //   React 18.
-          //   Bootstrap 5.
-          //   React hook form.
-          //   React router dom 6.
-          //   React query
-
-          //   Backend:-
-          //   Laravel
-          //   Spatie Permissions
-          //   MySQL
-
-          //   Other Skills I know:-
-          //   Redux
-          //   Express js
-          //   Next js frontend (new pages router.)
-          //   Tailwind CSS
-          //   Docker
-          //   Linux
-          //   Typescript
-
-          //   Interested in:-
-          //   Ethereum solidity.
-
-          //   `,
           icon: "usertie",
+        },
+
+        {
+          type: "projects-list",
+          title: "Links",
+          icon: "rocket",
+          groups: [
+            {
+              sectionHeader: "Code",
+              description: "project code",
+              items: [
+                {
+                  title: "React frontend github",
+                  projectUrl: "https://github.com/pgm-githumbi/lib_app_react/",
+                },
+                {
+                  title: "Laravel backend",
+                  projectUrl: "https://github.com/pgm-githumbi/lib-app",
+                },
+              ],
+            },
+          ],
         },
       ]}
       branding={false} // or false to hide it.
