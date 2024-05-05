@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /static/media/me.1730a64867225d24f370.jpg
+Disallow: /static/media/
