@@ -1,5 +1,4 @@
 import { useLocation, useParams } from "react-router-dom";
-import Table from "../common/tables/Table";
 
 const OneBook = () => {
   const {
