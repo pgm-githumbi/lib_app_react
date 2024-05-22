@@ -194,7 +194,7 @@ const Approval = () => {
           You're not a staff member.
           <p>
             <small>
-              Hint: login as MainStaffExample@example.com with password:
+              Hint: login as MainStaffExample@example.com with the password as
               password
             </small>
           </p>
