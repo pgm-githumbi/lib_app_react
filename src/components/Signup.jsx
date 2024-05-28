@@ -17,7 +17,7 @@ const Signup = () => {
   const { register, handleSubmit, setError, formState, getValues } = useForm({
     defaultValues: { name: "", email: "", password: "" },
   });
-  const { errors, touchedFields, dirtyFields } = formState;
+  const { errors, dirtyFields } = formState;
   const [submitDisabled, setSubmitDisabled] = useState(
     (Object.keys(errors).length && "disabled") || ""
   );

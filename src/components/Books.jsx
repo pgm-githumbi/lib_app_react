@@ -11,7 +11,7 @@ import BooksTable from "./BooksTable";
 import BorrowBook from "./BorrowBook";
 import CategoryListGroup from "./CategoryListGroup";
 
-const currentLocation = "home/books";
+// const currentLocation = "home/books";
 const columnHelper = createColumnHelper();
 const columns = [
   // columnHelper.accessor("id", {
