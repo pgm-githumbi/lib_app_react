@@ -1,8 +1,7 @@
 import { createColumnHelper } from "@tanstack/react-table";
 import Table from "../common/tables/Table";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { TablePagesContext } from "../PaginationContext";
-import { Link } from "react-router-dom";
 import { returnedLoanedBooks } from "../data/BooksData";
 import { ReturnedBooksContext } from "../contexts/ReturnedBooksContext";
 import { loadingContext } from "../contexts/LoadingContext";
@@ -52,7 +51,7 @@ const ReturnedBooks = () => {
       setLoading(false);
     }
     loading && fetchData();
-  }, [loading]);
+  }, [loading, setLoading, setReturnedBooks]);
   const anyBooks = () => Object.keys(returnedBooks).length;
   const errMessage = () => (loading && "Loading...") || "No books found.";
   return (

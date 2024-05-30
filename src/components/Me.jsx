@@ -72,7 +72,7 @@ function Me() {
               items: [{ title: "Solidity" }],
             },
           ],
-          icon: "usertie",
+          // icon: "usertie",
         },
 
         {

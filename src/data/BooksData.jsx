@@ -1,5 +1,5 @@
 import axios from "axios";
-import { filter, forEach } from "lodash";
+import { filter } from "lodash";
 import dateFormat from "dateformat";
 
 import {
@@ -44,7 +44,8 @@ export const getBook = async (book_id) => {
 export const getPendingLoans = async () => {
   const { url, config } = authConnection();
   const loans = apiLoans(await axios.get(`${url}/loan`, config));
-  if (loans.length == 0) throw new Error("You currently have no loaned books.");
+  if (loans.length === 0)
+    throw new Error("You currently have no loaned books.");
   return loans.filter((loan) => loanIsPending(loan));
 };
 

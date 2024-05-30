@@ -1,8 +1,8 @@
-import { Link, matchPath, useMatch, useLocation } from "react-router-dom";
+import { Link, matchPath, useLocation } from "react-router-dom";
 
 const CommonListGroup = (props) => {
-  const location = useLocation();
-  const pathname = location.pathname;
+  // const location = useLocation();
+  // const pathname = location.pathname;
 
   return (
     <div className="col-sm-auto py-4">

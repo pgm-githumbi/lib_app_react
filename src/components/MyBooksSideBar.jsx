@@ -1,21 +1,10 @@
-import React, { Component } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import { ListGroup, ListGroupItem, NavLink } from "reactstrap";
-
-const Sidebar = () => {
-  return (
-    <div className="col-sm-auto">
-      <ListGroup>
-        <Item></Item>
-      </ListGroup>
-    </div>
-  );
-};
 
 const MyBooksSideBar = (props) => {
   console.log("props.args: ", props.args);
   const location = useLocation();
-  const pathname = location.pathname;
   console.log(location);
   return (
     <div className="col-sm-auto py-4">

@@ -1,14 +1,6 @@
 import axios from "axios";
-import connection, {
-  authConnection,
-  unAuthConnection,
-} from "../data/common/server";
-import {
-  apiBook,
-  apiLogin,
-  apiRegister,
-  apiRegisterError,
-} from "./ServerResponses";
+import { authConnection, unAuthConnection } from "../data/common/server";
+import { apiLogin, apiRegister, apiRegisterError } from "./ServerResponses";
 
 export const isLoggedIn = () => {
   const token = getToken();

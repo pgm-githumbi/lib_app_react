@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import App from "./App";
 import { isLoggedIn } from "./data/Auth";

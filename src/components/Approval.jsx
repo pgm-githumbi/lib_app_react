@@ -141,12 +141,12 @@ const Approval = () => {
     getUsersQueries.length === borrowQuery.data.length &&
     getUsersQueries.every((query) => query.isSuccess);
 
-  const anyLoading =
-    borrowQuery.isLoading ||
-    !Array.isArray(getBooksQueries) ||
-    !Array.isArray(getUsersQueries) ||
-    getBooksQueries.some((query) => query.isLoading) ||
-    getUsersQueries.some((query) => query.isLoading);
+  // const anyLoading =
+  //   borrowQuery.isLoading ||
+  //   !Array.isArray(getBooksQueries) ||
+  //   !Array.isArray(getUsersQueries) ||
+  //   getBooksQueries.some((query) => query.isLoading) ||
+  //   getUsersQueries.some((query) => query.isLoading);
 
   const completeData =
     borrowQuery.isSuccess &&

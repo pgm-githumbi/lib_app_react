@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, useLocation, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import LoanBooks from "./LoanBooks";
 import ReturnedBooks from "./ReturnedBooks";
 import ErrorPage from "../common/ErrorPage";
@@ -22,8 +22,7 @@ const sidebarArgs = [
   },
 ];
 const MyBooks = () => {
-  const location = useLocation();
-  const [username, setUsername] = useState(getUsername() || "user");
+  const [username] = useState(getUsername() || "user");
   return (
     <div className="container-sm text-center">
       <div className="row py-3">

@@ -1,13 +1,13 @@
 import { createContext, useState } from "react";
 
-const defaultSidebarLinks = [
-  {
-    visibleName: "All",
-    link: "",
-    parentPath: "/books",
-    activeOn: ["", "all"],
-  },
-];
+// const defaultSidebarLinks = [
+//   {
+//     visibleName: "All",
+//     link: "",
+//     parentPath: "/books",
+//     activeOn: ["", "all"],
+//   },
+// ];
 
 export const ListGroupContexts = createContext({
   categoryListGroupLinks: [],

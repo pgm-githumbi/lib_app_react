@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/aria-role */
 import { forEach } from "lodash";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -15,7 +16,7 @@ const Login = () => {
   const { register, reset, formState, handleSubmit, setError } = useForm({
     defaultValues: { email: "", password: "" },
   });
-  const { errors, dirtyFields, isSubmitted } = formState;
+  const { errors, dirtyFields } = formState;
   const errorsPresent = errors && Object.keys(errors).length;
   const serverErrorsPresent = errors && errors.root;
   const [submitDisabled, setSubmitDisabled] = useState(

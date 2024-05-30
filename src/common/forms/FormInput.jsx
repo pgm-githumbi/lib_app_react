@@ -1,7 +1,6 @@
 const FormInput = ({
   errors,
   register,
-  dirtyFields,
   validation,
   fieldName,
   fieldLabel,
@@ -31,9 +30,9 @@ const FormInput = ({
             {...register(fieldName, validation)}
           />
         </span>
-        {(fieldName == "password" ||
-          fieldName == "password_confirmation" ||
-          inputType == "password") && (
+        {(fieldName === "password" ||
+          fieldName === "password_confirmation" ||
+          inputType === "password") && (
           <span className="form-text col-1">
             <button
               type="button"

@@ -3,17 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 const OneBook = () => {
   const {
     state: {
-      book: {
-        name,
-        description,
-        image,
-        isbn,
-        pages,
-        publisher,
-        available,
-        category_id,
-        id,
-      },
+      book: { name, description, image, isbn, pages, publisher, available },
     },
   } = useLocation();
   const params = useParams();

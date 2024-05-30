@@ -1,6 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import PaginationContext from "./PaginationContext";
 
@@ -15,11 +15,7 @@ import OneBook from "./components/OneBook";
 import Me from "./components/Me";
 
 function App() {
-  const navig = useNavigate();
-  const toBooks = () => {
-    navig("/books");
-    return <Books />;
-  };
+  // const navig = useNavigate();
   return (
     <TopLevelContext>
       <PaginationContext>

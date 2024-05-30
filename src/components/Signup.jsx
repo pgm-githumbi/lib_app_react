@@ -27,7 +27,7 @@ const Signup = () => {
     if (Object.keys(errors).length || !formState.isValid)
       setSubmitDisabled("disabled");
     else setSubmitDisabled("");
-  }, [formState]);
+  }, [errors, formState]);
 
   const onSubmit = (credentials) => {
     console.log("submitting");
@@ -72,7 +72,7 @@ const Signup = () => {
                 ...minLength(2),
                 ...maxLength(100),
                 pattern: {
-                  value: /^[a-zA-Z0-9_\-]+$/,
+                  value: /^[a-zA-Z0-9_-]+$/,
                   message: "Use only letters, numbers, underscore or hyphens",
                 },
               }}
@@ -121,7 +121,7 @@ const Signup = () => {
                 validate: {
                   matchesPassword: (passConfirm) => {
                     return (
-                      getValues("password") == passConfirm ||
+                      getValues("password") === passConfirm ||
                       "Password confirmation doesn't match password"
                     );
                   },

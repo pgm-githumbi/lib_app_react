@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/aria-role */
 const SignupHeader = () => {
   return (
     <div className="row">

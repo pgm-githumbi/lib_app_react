@@ -1,7 +1,7 @@
 import axios from "axios";
 import { authConnection } from "./common/server";
 import { apiCategories, apiCategory } from "./ServerResponses";
-import { allBooks, getBook } from "./BooksData";
+import { allBooks } from "./BooksData";
 import { forIn } from "lodash";
 
 export const getCategories = async () => {
@@ -19,12 +19,13 @@ export const getCategory = async (category_id) => {
 export const getCategoriesWithMostBooks = async () => {
   const category_ids = {};
   const books = await allBooks();
-  books.map((book) => {
-    category_ids[book.category_id] = (category_ids[book.category_id] || 0) + 1;
-  });
+  books.map(
+    (book) =>
+      (category_ids[book.category_id] =
+        (category_ids[book.category_id] || 0) + 1)
+  );
   const categoryIdList = [];
-  const topCategories = [];
-  forIn(category_ids, (bookCount, category_id, categoryObj) => {
+  forIn(category_ids, (bookCount, category_id) => {
     categoryIdList.push(category_id);
   });
   //Sort the categoryIds

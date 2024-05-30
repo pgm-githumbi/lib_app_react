@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createColumnHelper } from "@tanstack/react-table";
 import React, { useContext, useEffect } from "react";
 import { Link, Route, Routes } from "react-router-dom";
@@ -74,10 +75,9 @@ const columns = [
 ];
 
 const Books = () => {
-  const { allBooksTableData, allBooksSetTableData } =
-    useContext(AllBooksContext);
+  const { allBooksSetTableData } = useContext(AllBooksContext);
   const {
-    booksComp: { loading, setLoading },
+    booksComp: { loading },
   } = useContext(loadingContext);
   const {
     allBooksTable: {

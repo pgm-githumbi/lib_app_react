@@ -19,7 +19,7 @@ const BorrowBook = ({ book }) => {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   });
-  const { data: borrowApproved, ...getApprovedQuery } = useQuery({
+  const { data: borrowApproved } = useQuery({
     queryKey: getApprovedQueryKey,
     queryFn: () => getIfApprovedLoan(book),
     refetchOnMount: false,
@@ -40,7 +40,7 @@ const BorrowBook = ({ book }) => {
   const borrowBookMutation = useMutation({
     mutationFn: () => borrowBook(book),
     onSuccess: (newBorrow) =>
-      queryClient.setQueryData(getBorrowQueryKey, (ignore) => newBorrow),
+      queryClient.setQueryData(getBorrowQueryKey, () => newBorrow),
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey });
       queryClient.invalidateQueries({ queryKey: getApprovedQueryKey });

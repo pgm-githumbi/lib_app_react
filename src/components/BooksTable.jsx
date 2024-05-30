@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "react-query";
+import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Table from "../common/tables/Table";
 import { getAllBooks } from "../data/BooksData";
@@ -13,7 +13,6 @@ const BooksTable = ({
   setSorting,
 }) => {
   const { category_id } = useParams();
-  const queryClient = useQueryClient();
   const allBooksQueryKey = ["all books list"];
   const { data, ...allBooksQuery } = useQuery({
     queryKey: allBooksQueryKey,
