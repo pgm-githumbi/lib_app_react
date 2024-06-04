@@ -8,6 +8,7 @@ export const authConnection = () => {
       Authorization: `Bearer ${getToken()}`,
     },
   };
+  console.log(`url is: ${url}`);
   return { url, config };
 };
 
