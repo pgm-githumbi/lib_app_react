@@ -9,6 +9,7 @@ export const authConnection = () => {
     },
   };
   console.log(`url is: ${url}`);
+  console.log(`axios defaults: `, axios.defaults);
   return { url, config };
 };
 
