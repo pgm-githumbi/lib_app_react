@@ -8,8 +8,6 @@ export const authConnection = () => {
       Authorization: `Bearer ${getToken()}`,
     },
   };
-  console.log(`url is: ${url}`);
-  console.log(`axios defaults: `, axios.defaults);
   return { url, config };
 };
 
