@@ -18,12 +18,16 @@ const BorrowBook = ({ book }) => {
     queryFn: () => getBorrow(book.id),
     refetchOnMount: false,
     refetchOnWindowFocus: false,
+    staleTime: Infinity,
+    cacheTime: Infinity,
   });
   const { data: borrowApproved } = useQuery({
     queryKey: getApprovedQueryKey,
     queryFn: () => getIfApprovedLoan(book),
     refetchOnMount: false,
     refetchOnWindowFocus: false,
+    staleTime: Infinity,
+    cacheTime: Infinity,
   });
 
   const checkBorrowedQuery = useQuery({
@@ -35,6 +39,8 @@ const BorrowBook = ({ book }) => {
       ),
     refetchOnMount: false,
     refetchOnWindowFocus: false,
+    staleTime: Infinity,
+    cacheTime: Infinity,
   });
 
   const borrowBookMutation = useMutation({

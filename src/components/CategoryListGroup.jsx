@@ -30,6 +30,7 @@ const CategoryListGroup = () => {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
     cacheTime: Infinity,
+    staleTime: Infinity,
   });
 
   if (isLoading) {

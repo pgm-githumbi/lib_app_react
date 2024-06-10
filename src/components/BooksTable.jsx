@@ -20,6 +20,7 @@ const BooksTable = ({
     refetchOnMount: false,
     refetchOnWindowFocus: false,
     cacheTime: Infinity,
+    staleTime: Infinity,
   });
 
   if (allBooksQuery.isLoading) {

@@ -40,6 +40,7 @@ const LoanBooks = () => {
     cacheTime: Infinity,
     refetchOnMount: false,
     refetchOnWindowFocus: false,
+    staleTime: Infinity,
   });
 
   const {
