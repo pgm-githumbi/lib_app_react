@@ -235,7 +235,10 @@ const Approval = () => {
           {gotRole && !isStaff && notStaffMember}
           {borrowQuery.isLoading && loadingRender}
           {borrowQuery.isError && errorRender}
-          {borrowQuery.isSuccess && !querySuccessButNoData && successRender}
+          {isStaff &&
+            borrowQuery.isSuccess &&
+            !querySuccessButNoData &&
+            successRender}
           {borrowQuery.isSuccess &&
             querySuccessButNoData &&
             successRenderNoData}
