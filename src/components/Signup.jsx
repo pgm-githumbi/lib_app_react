@@ -97,12 +97,13 @@ const Signup = () => {
               validation={{
                 ...requiredField("Password"),
                 ...maxLength(100),
+                ...minLength(4),
                 validate: (password) => {
                   const {
                     score,
                     feedback: { warning },
                   } = zxcvbn(password);
-                  return score >= 0 || warning || "too weak"; // TODO: change to 3
+                  return score >= 3 || warning || "too weak"; // TODO: change to 3
                 },
               }}
             />
