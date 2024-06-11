@@ -57,6 +57,7 @@ const CategoryListGroup = () => {
     const categoryLinks = categories.map((category) =>
       createCategoryLink(category)
     );
+    console.log("categories", categories);
     return (
       <CommonListGroup args={[...defaultSidebarLinks, ...categoryLinks]} />
     );

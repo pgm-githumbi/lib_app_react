@@ -28,6 +28,7 @@ export const getCategoriesWithMostBooks = async () => {
   forIn(category_ids, (bookCount, category_id) => {
     categoryIdList.push(category_id);
   });
+  console.log(category_ids);
   //Sort the categoryIds
   categoryIdList.sort((catId1, catId2) => {
     return category_ids[catId1] - category_ids[catId2];
