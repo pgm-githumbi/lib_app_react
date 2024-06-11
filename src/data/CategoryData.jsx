@@ -24,18 +24,20 @@ export const getCategoriesWithMostBooks = async () => {
       (category_ids[book.category_id] =
         (category_ids[book.category_id] || 0) + 1)
   );
-  const categoryIdList = [];
-  forIn(category_ids, (bookCount, category_id) => {
+  console.log("category_ids: ", category_ids);
+  let categoryIdList = [];
+  forIn(category_ids, (bookCount, category_id, object) => {
     categoryIdList.push(category_id);
   });
-  console.log(category_ids);
+  console.log("categoryIdList Presort: ", categoryIdList);
   //Sort the categoryIds
   categoryIdList.sort((catId1, catId2) => {
     return category_ids[catId1] - category_ids[catId2];
   });
+  console.log("categoryIdList: ", categoryIdList);
   return await Promise.all(
     categoryIdList
-      .slice(Math.min(categoryIdList.length, 5), categoryIdList.length)
+      .slice(Math.max(categoryIdList.length - 4, 0), categoryIdList.length)
       .reverse()
       .map(async (catId) => {
         return await getCategory(catId);
