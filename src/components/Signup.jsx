@@ -9,8 +9,9 @@ import { useEffect, useState } from "react";
 import zxcvbn from "zxcvbn";
 import SignupHeader from "./SignupHeader";
 import { signUp } from "../data/Auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { ServerAsleepWarn } from "./ServerAsleepWarn";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -53,7 +54,8 @@ const Signup = () => {
   };
   return (
     <>
-      <section className="container-fluid col-10 col-sm-10 col-md-7 col-lg-5">
+      <hr className="my-2"></hr>
+      <section className="container-fluid col-10 col-sm-10 col-md-7 col-lg-5 border">
         <div className="row">
           <SignupHeader />
         </div>
@@ -129,10 +131,14 @@ const Signup = () => {
                 },
               }}
             />
+
+            <Link to="/login">Already have an account?</Link>
+            <hr className="my-1"></hr>
             <input
               type="submit"
               className={`btn btn-primary ${submitDisabled}`}
             />
+            <ServerAsleepWarn />
           </form>
         </div>
       </section>
