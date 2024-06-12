@@ -35,9 +35,10 @@ export const getCategoriesWithMostBooks = async () => {
     return category_ids[catId1] - category_ids[catId2];
   });
   console.log("categoryIdList: ", categoryIdList);
+
   return await Promise.all(
     categoryIdList
-      .slice(Math.max(categoryIdList.length - 4, 0), categoryIdList.length)
+      .slice(Math.max(categoryIdList.length - 3, 0), categoryIdList.length)
       .reverse()
       .map(async (catId) => {
         return await getCategory(catId);
